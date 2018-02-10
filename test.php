@@ -15,7 +15,11 @@ class ToDoTest extends TestCase {
 
     public function setUp()
     {
-        $capabilities = array("platform"=>"LINUX", "browserName" => "chrome", "version" => "64.0.3282.140");
+        $capabilities = array(
+        	"platform"		=> "LINUX",
+        	"browserName" 	=> "chrome",
+        	"version" 		=> "64.0.3282.140"
+        );
         
         $host = "http://localhost:4444/wd/hub";
         $this->driver = RemoteWebDriver::create($host, $capabilities);
@@ -28,6 +32,9 @@ class ToDoTest extends TestCase {
             print "\nNavigating to URL\n";
             $this->driver->get("http://crossbrowsertesting.github.io/todo-app.html");
             sleep(3);
+
+            $this->driver->takeScreenshot('screenshot_' . time() . '.png');
+
             print "Clicking Checkbox\n";
             $this->driver->findElement(WebDriverBy::name("todo-4"))->click();
             print "Clicking Checkbox\n";
