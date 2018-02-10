@@ -1,0 +1,7 @@
+{
+    "require": {
+        "facebook/webdriver": "^1.5",
+        "phpunit/phpunit": "^6.5",
+        "rmccue/requests": "^1.7"
+    }
+}
